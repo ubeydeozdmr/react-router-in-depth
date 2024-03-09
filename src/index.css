@@ -7,7 +7,7 @@
 body {
   margin: 0;
   padding: 20px;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   background: var(--secondary);
 }
 * {
@@ -28,20 +28,14 @@ button {
 
 /* navbar */
 
-
 /* page content */
-
 
 /* help layout */
 
-
 /* faq */
-
 
 /* careers list */
 
-
 /* careers details */
-
 
 /* breadcrumbs */
