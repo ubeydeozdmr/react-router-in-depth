@@ -10,13 +10,16 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Faq from './pages/Help/Faq';
 import Contact from './pages/Help/Contact';
+import NotFound from './pages/NotFound';
+import Careers, { careersLoader } from './pages/Careers/Careers';
+import CareerDetails, {
+  careerDetailsLoader,
+} from './pages/Careers/CareerDetails';
 
 // layouts
 import RootLayout from './layouts/RootLayout';
 import HelpLayout from './layouts/HelpLayout';
-import NotFound from './pages/NotFound';
 import CareersLayout from './layouts/CareersLayout';
-import Careers, { careersLoader } from './pages/Careers/Careers';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -31,6 +34,11 @@ const router = createBrowserRouter(
 
       <Route path="careers" element={<CareersLayout />}>
         <Route index element={<Careers />} loader={careersLoader} />
+        <Route
+          path=":id"
+          element={<CareerDetails />}
+          loader={careerDetailsLoader}
+        />
       </Route>
 
       <Route path="*" element={<NotFound />} />
