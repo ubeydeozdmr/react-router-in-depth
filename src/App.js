@@ -15,6 +15,7 @@ import Careers, { careersLoader } from './pages/Careers/Careers';
 import CareerDetails, {
   careerDetailsLoader,
 } from './pages/Careers/CareerDetails';
+import CareersError from './pages/Careers/CareersError';
 
 // layouts
 import RootLayout from './layouts/RootLayout';
@@ -33,11 +34,17 @@ const router = createBrowserRouter(
       </Route>
 
       <Route path="careers" element={<CareersLayout />}>
-        <Route index element={<Careers />} loader={careersLoader} />
+        <Route
+          index
+          element={<Careers />}
+          loader={careersLoader}
+          errorElement={<CareersError />}
+        />
         <Route
           path=":id"
           element={<CareerDetails />}
           loader={careerDetailsLoader}
+          errorElement={<CareersError />}
         />
       </Route>
 
